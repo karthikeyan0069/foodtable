@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Food Menu UI</title>
+
+<style>
+
+/* ===== BODY ===== */
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#667eea,#764ba2);
+    color:white;
+}
+
+/* HEADER */
+header{
+    text-align:center;
+    padding:25px;
+    font-size:28px;
+    font-weight:bold;
+}
+
+/* FILTER BUTTONS */
+.filters{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.filters button{
+    padding:10px 18px;
+    margin:5px;
+    border:none;
+    border-radius:25px;
+    background:#ffffff22;
+    color:white;
+    cursor:pointer;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.filters button:hover{
+    background:white;
+    color:#764ba2;
+    transform:scale(1.1);
+}
+
+/* GRID */
+.menu{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:20px;
+    padding:20px;
+}
+
+/* CARD */
+.card{
+    background:rgba(255,255,255,0.15);
+    backdrop-filter:blur(10px);
+    border-radius:18px;
+    padding:25px;
+    text-align:center;
+    transition:.4s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+    box-shadow:0 0 20px rgba(255,255,255,0.5);
+}
+
+/* EMOJI ICON */
+.icon{
+    font-size:55px;
+    margin-bottom:10px;
+}
+
+/* PRICE */
+.price{
+    color:#ffeaa7;
+    font-size:20px;
+    margin:10px 0;
+}
+
+/* TAG */
+.tag{
+    background:#ff7675;
+    padding:5px 12px;
+    border-radius:15px;
+    font-size:13px;
+}
+
+footer{
+    text-align:center;
+    padding:15px;
+    opacity:0.8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>🍴 Smart Food Menu</header>
+
+<div class="filters">
+<button onclick="filterMenu('all')">All</button>
+<button onclick="filterMenu('fast')">Fast Food</button>
+<button onclick="filterMenu('drink')">Drinks</button>
+<button onclick="filterMenu('dessert')">Desserts</button>
+</div>
+
+<div class="menu">
+
+<div class="card fast">
+<div class="icon">🍔</div>
+<h3>Cheese Burger</h3>
+<p class="price">₹120</p>
+<span class="tag">Fast Food</span>
+</div>
+
+<div class="card fast">
+<div class="icon">🍕</div>
+<h3>Veg Pizza</h3>
+<p class="price">₹180</p>
+<span class="tag">Fast Food</span>
+</div>
+
+<div class="card drink">
+<div class="icon">🥤</div>
+<h3>Cold Coffee</h3>
+<p class="price">₹90</p>
+<span class="tag">Drink</span>
+</div>
+
+<div class="card dessert">
+<div class="icon">🍰</div>
+<h3>Chocolate Cake</h3>
+<p class="price">₹150</p>
+<span class="tag">Dessert</span>
+</div>
+
+<div class="card drink">
+<div class="icon">🧃</div>
+<h3>Mango Juice</h3>
+<p class="price">₹70</p>
+<span class="tag">Drink</span>
+</div>
+
+<div class="card dessert">
+<div class="icon">🍦</div>
+<h3>Ice Cream</h3>
+<p class="price">₹60</p>
+<span class="tag">Dessert</span>
+</div>
+
+</div>
+
+<footer>✨ Image-Free Unique Website</footer>
+
+<script>
+
+function filterMenu(category){
+    let cards=document.querySelectorAll(".card");
+
+    cards.forEach(card=>{
+        if(category==="all"){
+            card.style.display="block";
+        }
+        else if(card.classList.contains(category)){
+            card.style.display="block";
+        }
+        else{
+            card.style.display="none";
+        }
+    });
+}
+
+</script>
+
+</body>
+</html>
