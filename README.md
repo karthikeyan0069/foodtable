@@ -117,3 +117,6 @@ Smart Food Menu Website
 Created for learning modern web UI design and JavaScript interaction.
 
 ⭐ Simple • Creative • Beginner-Friendly Web Project
+
+
+OUTPUT:https://karthikeyan0069.github.io/foodtable/
